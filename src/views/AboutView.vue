@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  o-button( rounded variant="primary" )
+  o-button( rounded variant="primary" ) hola
 </template>
 
 <script>
