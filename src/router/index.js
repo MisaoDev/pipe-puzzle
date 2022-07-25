@@ -1,5 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import { RouterView } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 // route level code-splitting
 // this generates a separate chunk (about.[hash].js) for this route
@@ -10,16 +9,15 @@ import { RouterView } from 'vue-router'
 const routes = [
   {
     path: '/',
-    component: RouterView,
     children: [
       {
-        path: '/',
+        path: '',
         name: 'home',
-        redirect: { name: 'game' },
-        // component: () => import('@/views/GameView.vue'),
+        // redirect: { name: 'game' },
+        component: () => import('@/views/HomeView.vue'),
       },
       {
-        path: '/game',
+        path: 'game',
         name: 'game',
         component: () => import('@/views/GameView.vue'),
       },
@@ -28,7 +26,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(),
   routes,
 })
 
